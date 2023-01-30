@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ef9a389e76.js" crossorigin="anonymous"></script>
+    <title>GDSC</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            height: 100vh;
+            background-image: url(https://raw.githubusercontent.com/sumit-022/GDSC-Assignment/main/Assets/background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        .con{
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        .big{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+        }
+        .divo{
+            /* border: red solid 2px; */
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        .divt{
+            /* border: red solid 2px; */
+            /* height: 0%; */
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            margin-top: 50px;
+
+        }
+        .cir{
+            display: flex;
+            align-content:flex-start ;
+            width: 80%;
+        }
+        .handle{
+            /* border: red solid 3px; */
+            margin-top: 60px;
+            margin-right: 25px;
+            width:10%;
+            display: flex;
+            flex-direction:row;
+            justify-content:space-between;
+            align-content:flex-end;
+        }
+        .ino{
+            /* border: red solid 2px; */
+            display: flex;
+            justify-content:center;
+            align-content:center;
+            width:50%;
+            flex-direction: column;
+
+        }
+        .int{
+            /* border: red solid 2px; */
+            /* margin-top: 100px; */
+            width:45%;
+            margin-top: 30px;
+            /* margin-left: 20px; */
+
+        }
+        .imga{
+            /* margin-top:40px; */
+            padding-top: 50px;
+            margin-left: 50px;
+            width: 130px;
+        }
+        .img{
+            width:100%;
+
+        }
+        .inner{
+            margin-left: 100px;
+            margin-top: 70px;
+            color: white;
+            font-weight: bold;
+            font-size: 80px;
+        }
+        .innerone{
+            margin-left: 120px;
+            margin-top: 10px;
+            color: white;
+            font-size: 25px;
+        }
+        .exp{
+            margin-left: 120px;
+            margin-top: 10px;
+            color: white;
+            font-size: 20px;
+            padding: 13px;
+            border: white solid 2px;
+            width:95px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        .exp:hover{
+             background-color: white;
+             color: purple;
+             cursor: pointer;
+        }
+        .fa-brands{
+            color: white;
+            font-size: 40px;
+
+        }
+        .square{
+            position: absolute;
+            animation-name: sq;
+            animation-iteration-count: infinite;
+            animation-duration: 9s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            visibility: hidden;
+        }
+        .circle{
+            position: absolute;
+            animation-name: ci;
+            animation-iteration-count: infinite;
+            animation-duration: 8s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            visibility: hidden;
+            z-index: -1;
+        }
+        .cross{
+            position: absolute;
+            animation-name: cr;
+            animation-iteration-count: infinite;
+            animation-duration: 8s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            visibility: hidden;
+            z-index:-1;
+        }
+        .triangle{
+            position: absolute;
+            animation-name: tr;
+            animation-iteration-count: infinite;
+            animation-duration: 8s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            visibility: hidden;
+            z-index: -1;
+        }
+        .square1{
+            position: absolute;
+            animation-name: sqa;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            visibility: hidden;
+        }
+        .circle1{
+            position: absolute;
+            animation-name: cir;
+            animation-iteration-count: infinite;
+            animation-duration: 8s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            visibility: hidden;
+            z-index: -1;
+        }
+        .cross1{
+            position: absolute;
+            animation-name: crr;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            visibility: hidden;
+            z-index:-1;
+        }
+        .triangle1{
+            position: absolute;
+            animation-name: tri;
+            animation-iteration-count: infinite;
+            animation-duration: 6s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            visibility: hidden;
+            z-index: -1;
+        }
+       @keyframes sq {
+        0% {left: 5vw;top: 100vh;opacity: 0.5;visibility: visible;}
+        50%{left:5vw;top:50vh;opacity:1;visibility: visible;}
+        100%{left:5vw; top:0vh;opacity:0;visibility: visible;}
+       }
+       @keyframes ci {
+        0% {left: 25vw;top: 100vh;opacity: 0.5;visibility: visible;}
+        50%{left:25vw;top:50vh;opacity:1;visibility: visible;}
+        100%{left: 25vw; top:0vh;opacity:0;visibility: visible;}
+       }
+       @keyframes tr { 
+        0% {left: 50vw;top: 100vh;opacity: 0.5;visibility: visible;}
+        50%{left:50vw;top:50vh;opacity:1;visibility: visible;}
+        100%{left: 50vw; top:0vh;opacity:0;visibility: visible;}
+       }
+       @keyframes cr {
+        0% {left: 80vw;top: 100vh;opacity: 0.5;visibility: visible;}
+        50%{left:80vw;top:50vh;opacity:1;visibility: visible;}
+        100%{left: 80vw; top:0vh;opacity:0;visibility: visible;}
+        }
+        @keyframes sqa {
+        0% {left: 60vw;top: 75vh;opacity: 0.5;visibility: visible;}
+        50%{left:60vw;top:40vh;opacity:1;visibility: visible;}
+        100%{left:60vw; top:0vh;opacity:0;visibility: visible;}
+       }
+       @keyframes cir {
+        0% {left: 75vw;top: 69vh;opacity: 0.5;visibility: visible;}
+        50%{left:75vw;top:30vh;opacity:1;visibility: visible;}
+        100%{left: 75vw; top:0vh;opacity:0;visibility: visible;}
+       }
+       @keyframes tri { 
+        0% {left: 90vw;top: 80vh;opacity: 0.5;visibility: visible;}
+        50%{left:90vw;top:40vh;opacity:1;visibility: visible;}
+        100%{left: 90vw; top:0vh;opacity:0;visibility: visible;}
+       }
+       @keyframes crr {
+        0% {left: 40vw;top: 50vh;opacity: 0.5;visibility: visible;}
+        50%{left:40vw;top:20vh;opacity:1;visibility: visible;}
+        100%{left: 40vw; top:0vh;opacity:0;visibility: visible;}
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="big">
+            <div class="square"><img src="./square.png"></div>
+            <div class="circle"><img src="./circle.png"></div>
+            <div class="cross"><img src="./cross.png"></div>
+            <div class="triangle"><img src="./triangle.png"></div> 
+            <div class="square1"><img src="./square.png"></div>
+            <div class="circle1"><img src="./circle.png"></div>
+            <div class="cross1"><img src="./cross.png"></div>
+            <div class="triangle1"><img src="./triangle.png"></div> 
+    </div>
+    <div class="con">
+        <div class="divo">
+            <div class="cir"><img  class="imga" src="./logo.png"></div>
+            <div class="handle">
+                <div class="face"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="inst"><i class="fa-brands fa-instagram"></i></div>
+                <div class="ink"><i class="fa-brands fa-linkedin-in"></i></div>
+            </div>
+        </div>
+        <div class="divt">
+            <div class="ino">
+                <div class="inner">Welcome to the Gaming World</div>
+                <div class="innerone">Dive into Awesomeness!</div>
+                <div class="exp">Explore</div>
+        
+        </div>
+            <div class="int">
+                <img class="img" src="./contimg.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
